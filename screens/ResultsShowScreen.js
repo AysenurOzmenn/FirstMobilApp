@@ -27,7 +27,7 @@ const ResultsShowScreen = ({ route, navigation }) => {
   }, [id]); // id bağımlılığı ekleyin
 
   if (!restaurant) {
-    return <Text>Yükleniyor...</Text>; // Veri yüklenene kadar yükleme göstergesi gösterin
+    return <Text>Yükleniyor... burayı havalı hale getir!</Text>; // Veri yüklenene kadar yükleme göstergesi gösterin
   }
 
   return (
