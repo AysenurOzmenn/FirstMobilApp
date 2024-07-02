@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
+import LottieView from 'lottie-react-native';
 
 const apiKey = '_Ie7vbSfaqa6xauaze2sY875LMCTpI1nymc3dMjOSBeuNaH9xQhHtIIYp1Ly2HlRIb9hhbe1MVY8ao4RhI1B1dhvzz8umrLhiD9ubp0tzsk-glzQj5km3rZgqfB7ZnYx';
 const apiUrl = 'https://api.yelp.com/v3/businesses';
@@ -24,10 +25,20 @@ const ResultsShowScreen = ({ route, navigation }) => {
     };
 
     fetchRestaurantDetails();
-  }, [id]); // id bağımlılığı ekleyin
+  }, [id]);
 
   if (!restaurant) {
-    return <Text>Yükleniyor... burayı havalı hale getir!</Text>; // Veri yüklenene kadar yükleme göstergesi gösterin
+    return (
+      <View style={styles.loadingContainer}>
+        <LottieView
+          source={require('../assets/Animation - 1719929842712.json')} // Dosya yolunu buraya ekleyin
+          autoPlay
+          loop
+          speed={5.0} //animasyon hızını 5 katına çıkarır(?)
+          style={styles.lottie}
+        />
+      </View>
+    );
   }
 
   return (
@@ -36,19 +47,19 @@ const ResultsShowScreen = ({ route, navigation }) => {
       <Text style={styles.subtitle}>{restaurant.phone}</Text>
       <Text style={styles.subtitle}>{restaurant.location.address1}</Text>
       {restaurant.photos.length > 0 ? (
-                <FlatList
-                    data={restaurant.photos}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => (
-                        <View style={styles.imageContainer}>
-                            <Image style={styles.image} source={{ uri: item }} />
-                        </View>
-                    )}
-                />
-            ) : (
-                <Text style={styles.noImageText}>Resim yok</Text>
-            )}
-        </View>
+        <FlatList
+          data={restaurant.photos}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <View style={styles.imageContainer}>
+              <Image style={styles.image} source={{ uri: item }} />
+            </View>
+          )}
+        />
+      ) : (
+        <Text style={styles.noImageText}>Resim yok</Text>
+      )}
+    </View>
   );
 };
 
@@ -77,7 +88,17 @@ const styles = StyleSheet.create({
   noImageText: {
     fontSize: 16,
     color: '#666'
-  }
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1e1e1e'
+  },
+  lottie: {
+    width: 200,
+    height: 200,
+  },
 });
 
 export default ResultsShowScreen;
