@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import axios from 'axios';
 import LottieView from 'lottie-react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const apiKey = '_Ie7vbSfaqa6xauaze2sY875LMCTpI1nymc3dMjOSBeuNaH9xQhHtIIYp1Ly2HlRIb9hhbe1MVY8ao4RhI1B1dhvzz8umrLhiD9ubp0tzsk-glzQj5km3rZgqfB7ZnYx';
 const apiUrl = 'https://api.yelp.com/v3/businesses';
@@ -43,6 +44,12 @@ const ResultsShowScreen = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
+      {
+        restaurant.is_closed ? 
+        (<Icon name="times-circle" size={30} color="#F44336" />) :
+        (<Icon style={styles.iconStyle} name="cutlery" size={30} color="#4CAF50" />)
+      }
+      
       <Text style={styles.title}>{restaurant.name}</Text>
       <Text style={styles.subtitle}>{restaurant.phone}</Text>
       <Text style={styles.subtitle}>{restaurant.location.address1}</Text>

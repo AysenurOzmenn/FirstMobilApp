@@ -37,9 +37,11 @@ export default function useResults() {
         params: {
           term: searchTerm,
           location: 'İstanbul',
+          limit: 50,
         },
       });
       setResults(response.data.businesses);
+      setErrorMessage('');
     } catch (err) {
       setErrorMessage('Something went wrong');
       console.error(err);
@@ -48,7 +50,7 @@ export default function useResults() {
 
   // Default search
   useEffect(() => {
-    searchApi('pasta');
+    searchApi('');
   }, []);
 
   return [searchApi, results, errorMessage];
