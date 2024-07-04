@@ -6,9 +6,9 @@
 
 ## Özellikler
 
-**Restoran Arama** : Kullanıcılar, arama çubuğu aracılığıyla restoran isimleri veya yemekleri ile arama yapabilirler.
-**Detaylı Bilgi**: Her restoran için açıklama, lokasyon bilgileri, iş saatleri ve iletişim bilgileri gibi detaylar görüntülenebilir.
-**Resim Galerisi**: Restoranın iç ve dış mekan fotoğrafları uygulama içinde görüntülenebilir.
+#### **Restoran Arama** : Kullanıcılar, arama çubuğu aracılığıyla restoran isimleri veya yemekleri ile arama yapabilirler.
+#### **Detaylı Bilgi**: Her restoran için açıklama, lokasyon bilgileri, iş saatleri ve iletişim bilgileri gibi detaylar görüntülenebilir.
+#### **Resim Galerisi**: Restoranın iç ve dış mekan fotoğrafları uygulama içinde görüntülenebilir.
 
 ## Kullanılan Teknolojiler
 
@@ -18,7 +18,7 @@
 ### *React Navigation*
 
 ## Başlangıç
-*Projeyi klonlayın ve gerekli bağımlılıkları yükleyin.
+*Projeyi klonlayın ve gerekli bağımlılıkları yükleyin.*
 ```
 git clone https://github.com/AysenurOzmenn/FirstMobilApp.git
 cd FirstMobilApp
