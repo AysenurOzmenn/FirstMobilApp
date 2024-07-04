@@ -17,10 +17,10 @@
 
 ## Kullanılan Teknolojiler
 
-### *React Native*
-### *Yelp Fusion API*
-### *Axios*
-### *React Navigation*
+#### *React Native*
+#### *Yelp Fusion API*
+#### *Axios*
+#### *React Navigation*
 
 
 
