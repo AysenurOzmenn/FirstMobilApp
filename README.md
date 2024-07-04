@@ -1,7 +1,7 @@
 
-# RESTORAN BİLGİ UYGULAMASI
+## RESTORAN BİLGİ UYGULAMASI
 
-## Bu proje, Yelp API kullanılarak geliştirilmiş bir restoran bilgi uygulamasıdır. Uygulama, kullanıcıların herhangi bir lokasyondaki restoranları isim veya yemeklere göre arayıp bilgi almasını sağlar.
+ Bu proje, Yelp API kullanılarak geliştirilmiş bir restoran bilgi uygulamasıdır. Uygulama, kullanıcıların herhangi bir lokasyondaki restoranları isim veya yemeklere göre arayıp bilgi almasını sağlar.
 
 
 # Özellikler
@@ -11,10 +11,10 @@
 **Resim Galerisi**: Restoranın iç ve dış mekan fotoğrafları uygulama içinde görüntülenebilir.
 
 # Kullanılan Teknolojiler
-*React Native*
-*Yelp Fusion API*
-*Axios*
-*React Navigation*
+# *React Native*
+# *Yelp Fusion API*
+# *Axios*
+# *React Navigation*
 
 # Başlangıç
 *Projeyi klonlayın ve gerekli bağımlılıkları yükleyin.
